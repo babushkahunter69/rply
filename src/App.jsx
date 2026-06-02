@@ -271,8 +271,7 @@ function PricingPage({ user, onSelect }) {
         ))}
       </div>
       <div className="stripe-note">
-        Payments secured by <strong style={{color:"var(--ink2)"}}>Stripe</strong> — PCI DSS compliant, encrypted in transit.<br/>
-        <span style={{fontSize:11,opacity:.7}}>To go live: add your <code>STRIPE_PUBLISHABLE_KEY</code> and replace the mock checkout with <code>stripe.redirectToCheckout()</code>.</span>
+        🔒 Payments secured by <strong style={{color:"var(--ink2)"}}>Stripe</strong> — PCI DSS compliant, encrypted in transit.
       </div>
     </div>
   );
