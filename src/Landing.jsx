@@ -15,12 +15,14 @@ export default function Landing({ goTo }) {
 
         /* ── HERO ── */
         .hero {
-          min-height: 92vh;
+          min-height: 75vh;
           display: flex;
           flex-direction: column;
           justify-content: center;
+          align-items: center;
+          text-align: center;
           padding: 80px 24px 60px;
-          max-width: 720px;
+          max-width: 860px;
           margin: 0 auto;
         }
 
@@ -33,20 +35,16 @@ export default function Landing({ goTo }) {
           letter-spacing: 0.08em;
           text-transform: uppercase;
           color: #9a9590;
-          margin-bottom: 32px;
+          margin-bottom: 24px;
         }
 
         .hero-tag::before {
-          content: '';
-          display: block;
-          width: 20px;
-          height: 1px;
-          background: #9a9590;
+          content: none;
         }
 
         .hero-h1 {
           font-family: 'DM Serif Display', serif;
-          font-size: clamp(36px, 5.5vw, 58px);
+          font-size: clamp(40px, 6vw, 68px);
           font-weight: 400;
           line-height: 1.0;
           letter-spacing: -0.02em;
@@ -60,19 +58,20 @@ export default function Landing({ goTo }) {
         }
 
         .hero-sub {
-          font-size: 16px;
+          font-size: 17px;
           color: #6b6760;
           line-height: 1.7;
           font-weight: 400;
-          max-width: 480px;
-          margin-bottom: 44px;
+          max-width: 520px;
+          margin: 0 auto 40px;
         }
 
         .hero-ctas {
           display: flex;
           gap: 12px;
           flex-wrap: wrap;
-          margin-bottom: 64px;
+          justify-content: center;
+          margin-bottom: 56px;
         }
 
         .cta-primary {
@@ -107,8 +106,9 @@ export default function Landing({ goTo }) {
 
         .hero-stats {
           display: flex;
-          gap: 40px;
+          gap: 48px;
           flex-wrap: wrap;
+          justify-content: center;
         }
 
         .stat-item { }
@@ -159,9 +159,9 @@ export default function Landing({ goTo }) {
 
         /* ── HOW IT WORKS ── */
         .section {
-          max-width: 960px;
+          max-width: 1080px;
           margin: 0 auto;
-          padding: 100px 24px;
+          padding: 80px 40px;
         }
 
         .section-label {
@@ -238,9 +238,9 @@ export default function Landing({ goTo }) {
         }
 
         .ba-inner {
-          max-width: 960px;
+          max-width: 1080px;
           margin: 0 auto;
-          padding: 100px 24px;
+          padding: 80px 40px;
         }
 
         .ba-grid {
@@ -358,7 +358,7 @@ export default function Landing({ goTo }) {
         /* ── PRICING TEASER ── */
         .pricing-teaser {
           background: #0f0e0c;
-          padding: 100px 24px;
+          padding: 80px 40px;
         }
 
         .pricing-inner {
