@@ -721,7 +721,7 @@ Return ONLY the response. No preamble, no labels.`;
       }
       onUsage(biz);
     } catch (e) {
-      setErr("Error: " + (e.message || "Unknown error"));
+      setErr(e.message || "Something went wrong. Please try again.");
     }
     setLoading(false);
   };
