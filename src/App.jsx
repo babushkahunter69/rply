@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Landing from "./Landing";
 import {
   signUp, signIn, signInWithGoogle, signOutUser,
   onAuthChange, getUserData, incrementUsage, saveBizName,
@@ -484,36 +485,7 @@ Return ONLY the response. No preamble, no labels.`;
   );
 }
 
-// ── Landing ───────────────────────────────────────────────────────────────────
-function Landing({ goTo }) {
-  return (
-    <div className="page" style={{maxWidth:540,paddingTop:80}}>
-      <div style={{marginBottom:48}}>
-        <div style={{display:"inline-block",background:"var(--rule2)",border:"1px solid var(--rule)",borderRadius:20,padding:"4px 14px",fontSize:11,fontWeight:600,letterSpacing:".06em",textTransform:"uppercase",color:"var(--ink3)",marginBottom:28}}>
-          Reputation management
-        </div>
-        <h1 style={{fontFamily:"'Fraunces',serif",fontWeight:400,fontSize:"clamp(42px,8vw,64px)",lineHeight:1.05,letterSpacing:"-.02em",marginBottom:20,color:"var(--ink)"}}>
-          Every review deserves<br/><em>a real reply.</em>
-        </h1>
-        <p style={{fontSize:17,color:"var(--ink3)",lineHeight:1.7,marginBottom:36,fontWeight:300}}>
-          Replix writes polished, human-sounding responses to your Google and Yelp reviews in seconds. Stop leaving reviews unanswered.
-        </p>
-        <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
-          <button className="btn btn-primary" style={{padding:"12px 24px",fontSize:14}} onClick={()=>goTo("auth")}>Start free →</button>
-          <button className="btn btn-default" style={{padding:"12px 24px",fontSize:14}} onClick={()=>goTo("pricing")}>See pricing</button>
-        </div>
-      </div>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"var(--rule)",borderRadius:10,overflow:"hidden",border:"1px solid var(--rule)"}}>
-        {[["3 free","responses to start"],["< 2s","to generate"],["$49/mo","for unlimited"]].map(([n,l]) => (
-          <div key={n} style={{background:"var(--white)",padding:"18px 16px",textAlign:"center"}}>
-            <div style={{fontFamily:"'Fraunces',serif",fontWeight:400,fontSize:26,color:"var(--ink)",marginBottom:2}}>{n}</div>
-            <div style={{fontSize:12,color:"var(--ink3)"}}>{l}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+// Landing moved to Landing.jsx
 
 // ── Root ──────────────────────────────────────────────────────────────────────
 export default function App() {
