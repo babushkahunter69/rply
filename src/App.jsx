@@ -720,8 +720,8 @@ Return ONLY the response. No preamble, no labels.`;
         setHistory(h=>[{snip:review.slice(0,55)+(review.length>55?"…":""),stars,tone,time:new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}, ...h.slice(0,4)]);
       }
       onUsage(biz);
-    } catch {
-      setErr("Something went wrong. Please try again.");
+    } catch (e) {
+      setErr("Error: " + (e.message || "Unknown error"));
     }
     setLoading(false);
   };
