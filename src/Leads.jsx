@@ -42,6 +42,9 @@ body{background:#faf9f6}
 .copy-btn{background:#fff;border:1px solid #e8e4de;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;color:#4a4740;padding:4px 10px;cursor:pointer;transition:all .15s}
 .copy-btn:hover{border-color:#b0aba3;color:#0f0e0c}
 .no-results{text-align:center;padding:60px 20px;color:#9a9590;font-size:14px}
+.biz-links{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.biz-link{font-size:12px;font-weight:500;color:#4a4740;background:#f2efe9;border:1px solid #e8e4de;border-radius:6px;padding:4px 10px;text-decoration:none;transition:all .15s}
+.biz-link:hover{background:#e8e4de;color:#0f0e0c}
 .results-count{font-size:13px;color:#9a9590;margin-bottom:16px}
 `;
 
@@ -153,6 +156,13 @@ export default function Leads() {
                         </button>
                       </div>
 
+                      {(biz.website || biz.phone || biz.google_url) && (
+                        <div className="biz-links">
+                          {biz.website && <a className="biz-link" href={biz.website} target="_blank" rel="noreferrer">🌐 Website</a>}
+                          {biz.phone && <a className="biz-link" href={`tel:${biz.phone}`}>📞 {biz.phone}</a>}
+                          {biz.google_url && <a className="biz-link" href={biz.google_url} target="_blank" rel="noreferrer">📍 Google Maps</a>}
+                        </div>
+                      )}
                       <div className="biz-badges">
                         {biz.rating && <span className="badge badge-stars">{"★"} {biz.rating} ({biz.user_ratings_total || 0} reviews)</span>}
                         {hasUnanswered

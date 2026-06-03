@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     const businesses = await Promise.all(places.map(async (place) => {
       try {
         const detailRes = await fetch(
-          `https://maps.googleapis.com/maps/api/place/details/json?place_id=${place.place_id}&fields=name,formatted_address,rating,user_ratings_total,reviews&key=${key}`
+          `https://maps.googleapis.com/maps/api/place/details/json?place_id=${place.place_id}&fields=name,formatted_address,rating,user_ratings_total,reviews,website,formatted_phone_number,url&key=${key}`
         );
         const detailData = await detailRes.json();
         const details = detailData.result || {};
@@ -44,6 +44,9 @@ export default async function handler(req, res) {
           rating: details.rating || place.rating,
           user_ratings_total: details.user_ratings_total || place.user_ratings_total,
           reviews,
+          website: details.website || null,
+          phone: details.formatted_phone_number || null,
+          google_url: details.url || null,
         };
       } catch {
         return null;
