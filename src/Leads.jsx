@@ -56,12 +56,14 @@ They have ${reviews.length} unanswered Google review(s). Here is one example:
 Write a short, friendly cold email (under 120 words) from Juliet, founder of Rply (rply.space) — an AI tool that writes polished Google review responses in under 2 seconds.
 
 Rules:
-- Open with something specific about their business or the unanswered review
+- Open with something specific about their business, location, or the unanswered review
 - Don't be salesy or pushy
 - Mention the free plan at rply.space
 - Sign off as Juliet, Founder of Rply
 - No em dashes
+- Adapt tone to the region: professional for UK/US/Australia, warm and relationship-first for Southeast Asia and Middle East
 - Sound like a real human, not a marketing email
+- Never mention the city or country explicitly as a sales tactic
 - Subject line on first line as "Subject: ..."
 
 Return only the email text.`;
