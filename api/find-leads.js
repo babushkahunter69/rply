@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  const { query, city } = req.body || {};
+  const { query, city, pageToken } = req.body || {};
   if (!query || !city) return res.status(400).json({ error: "Missing query or city" });
 
   const key = process.env.GOOGLE_PLACES_API_KEY;
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   try {
     // Step 1: Text search for businesses
     const searchRes = await fetch(
-      `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(`${query} in ${city}`)}&key=${key}`
+      `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(`${query} in ${city}`)}&key=${key}${pageToken ? `&pagetoken=${pageToken}` : ``}`
     );
     const searchData = await searchRes.json();
 
