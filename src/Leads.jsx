@@ -147,8 +147,8 @@ export default function Leads() {
           <p className="leads-sub">Find local businesses with unanswered Google reviews to pitch Rply.</p>
 
           <div className="search-row">
-            <input className="leads-input" placeholder="Business type (e.g. restaurant, salon, gym)" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => e.key === "Enter" && search()} />
-            <input className="leads-input" placeholder="City (e.g. New York, London, Tokyo)" value={city} onChange={e => setCity(e.target.value)} onKeyDown={e => e.key === "Enter" && search()} />
+            <input className="leads-input" placeholder="Business type (e.g. restaurant, dental clinic, hotel)" value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => e.key === "Enter" && search()} />
+            <input className="leads-input" placeholder="City (e.g. New York, London, Dubai)" value={city} onChange={e => setCity(e.target.value)} onKeyDown={e => e.key === "Enter" && search()} />
             <button className="leads-btn" onClick={search} disabled={loading}>
               {loading ? <><span className="spin"/>Searching...</> : "Find leads"}
             </button>
