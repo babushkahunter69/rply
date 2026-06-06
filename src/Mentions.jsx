@@ -55,7 +55,7 @@ const PRESETS = [
   "customer review response software",
 ];
 
-const REPLY_PROMPT = (opp) => `You are Juliet, founder of Rply (rply.space) — an AI tool that writes polished Google and Yelp review responses in under 2 seconds.
+const REPLY_PROMPT = (opp) => `You are Juliet, founder of Rply (rply.space), an AI tool that writes polished Google and Yelp review responses in under 2 seconds.
 
 Someone posted this online:
 Title: "${opp.title}"
@@ -159,7 +159,7 @@ export default function Mentions() {
       <div className="mn">
         <div className="mn-inner">
           <div className="mn-title">Mention Finder</div>
-          <p className="mn-sub">Find people asking about review management — jump in and mention Rply.</p>
+          <p className="mn-sub">Find people asking about review management and jump in with a helpful reply mentioning Rply.</p>
           <div className="mn-note">
             Searches Reddit, Quora, and forums via Google. Results are real posts where you can leave a helpful reply with a link to rply.space.
           </div>

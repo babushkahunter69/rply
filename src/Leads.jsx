@@ -53,7 +53,7 @@ const PROMPT = (biz, reviews) => `You are writing a short, personalized cold out
 They have ${reviews.length} unanswered Google review(s). Here is one example:
 "${reviews[0]?.text || "Great place!"}" (${reviews[0]?.rating} stars, ${reviews[0]?.time})
 
-Write a short, friendly cold email (under 120 words) from Juliet, founder of Rply (rply.space) — an AI tool that writes polished Google review responses in under 2 seconds.
+Write a short, friendly cold email (under 120 words) from Juliet, founder of Rply (rply.space), an AI tool that writes polished Google review responses in under 2 seconds.
 
 Rules:
 - Open with something specific about their business, location, or the unanswered review
@@ -160,7 +160,7 @@ export default function Leads() {
 
           {results.length > 0 && (
             <>
-              <div className="results-count">{results.length} businesses found — {results.filter(b => b.reviews?.some(r => !r.owner_reply)).length} with unanswered reviews</div>
+              <div className="results-count">{results.length} businesses found, {results.filter(b => b.reviews?.some(r => !r.owner_reply)).length} with unanswered reviews</div>
               <div className="biz-grid">
                 {results.map(biz => {
                   const unanswered = biz.reviews?.filter(r => !r.owner_reply) || [];

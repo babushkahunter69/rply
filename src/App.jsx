@@ -275,7 +275,7 @@ function PricingPage({ user, onSelect }) {
         ))}
       </div>
       <div className="stripe-note">
-        🔒 Payments secured by <strong style={{color:"var(--ink2)"}}>Stripe</strong> — PCI DSS compliant, encrypted in transit.
+        🔒 Payments secured by <strong style={{color:"var(--ink2)"}}>Stripe</strong>, PCI DSS compliant, encrypted in transit.
       </div>
     </div>
   );
@@ -314,12 +314,12 @@ function StripeModal({ plan, onDone, onClose }) {
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:24}}>
               <div>
                 <div className="modal-title">Stripe checkout</div>
-                <div className="modal-sub">Rply {label} — {price}/month</div>
+                <div className="modal-sub">Rply {label} · {price}/month</div>
               </div>
               <button style={{background:"none",border:"none",cursor:"pointer",fontSize:18,color:"var(--ink3)",lineHeight:1,padding:4}} onClick={onClose}>✕</button>
             </div>
             <div style={{background:"#eff6ff",border:"1px solid #bfdbfe",borderRadius:7,padding:"9px 13px",marginBottom:20,fontSize:12,color:"#1e40af"}}>
-              Test mode — use card <strong>4242 4242 4242 4242</strong>
+              Test mode: use card <strong>4242 4242 4242 4242</strong>
             </div>
             <div className="field">
               <label className="label">Card number</label>
@@ -620,7 +620,7 @@ export default function App() {
 
       {banner && (
         <div style={{textAlign:"center",padding:"11px",background:"var(--green-bg)",borderBottom:"1px solid #b6e4cc",fontSize:13,color:"var(--green)",fontWeight:500}}>
-          You're now on Pro — unlimited responses unlocked.
+          You're now on Pro. Unlimited responses unlocked.
         </div>
       )}
 

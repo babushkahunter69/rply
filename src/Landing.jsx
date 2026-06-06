@@ -523,7 +523,7 @@ export default function Landing({ goTo }) {
             Rply writes polished, human-sounding responses to your Google and Yelp reviews in under 2 seconds. Build trust, rank higher, convert more customers.
           </p>
           <div className="hero-ctas">
-            <button className="cta-primary" onClick={() => goTo("auth")}>Start free — no card needed</button>
+            <button className="cta-primary" onClick={() => goTo("auth")}>Start free, no card needed</button>
             <button className="cta-ghost" onClick={() => goTo("pricing")}>View pricing</button>
           </div>
           <div className="hero-stats">
@@ -585,13 +585,13 @@ export default function Landing({ goTo }) {
                 <span className="ba-badge">Without Rply</span>
                 <div className="ba-stars">★★☆☆☆</div>
                 <p className="ba-review">"Waited 45 minutes with a reservation. Food was cold and the waiter seemed annoyed we were even there. Won't be returning."</p>
-                <p className="ba-no-response">No response from owner — 6 weeks ago</p>
+                <p className="ba-no-response">No response from owner. 6 weeks ago.</p>
               </div>
               <div className="ba-card after">
                 <span className="ba-badge">With Rply</span>
                 <div className="ba-stars">★★☆☆☆</div>
                 <p className="ba-review">"Waited 45 minutes with a reservation. Food was cold and the waiter seemed annoyed we were even there. Won't be returning."</p>
-                <p className="ba-response">We're truly sorry about your experience — that's not the standard we hold ourselves to. A 45-minute wait with a reservation is unacceptable, and we'd love the chance to make it right. Please reach out to us directly and your next visit is on us. — The Team</p>
+                <p className="ba-response">We're truly sorry about your experience. That's not the standard we hold ourselves to. A 45-minute wait with a reservation is unacceptable, and we'd love the chance to make it right. Please reach out to us directly and your next visit is on us. Warm regards, The Team</p>
               </div>
             </div>
           </div>
@@ -664,8 +664,8 @@ export default function Landing({ goTo }) {
           <div className="faq-list">
             {[
               { q:"Do I need any technical skills?", a:"None. Paste a review, pick a tone, click generate. That's it." },
-              { q:"Will responses sound robotic or templated?", a:"No — Rply is powered by Claude AI and is specifically prompted to write like a real business owner, not a customer service template." },
-              { q:"What platforms does it work with?", a:"Any platform where you can copy and paste text — Google, Yelp, TripAdvisor, Facebook, and more." },
+              { q:"Will responses sound robotic or templated?", a:"No. Rply is powered by Claude AI and is specifically prompted to write like a real business owner, not a customer service template." },
+              { q:"What platforms does it work with?", a:"Any platform where you can copy and paste text: Google, Yelp, TripAdvisor, Facebook, and more." },
               { q:"Can I cancel anytime?", a:"Yes, absolutely. No contracts, no cancellation fees. Cancel in one click from your account." },
               { q:"What counts as a 'response' on the free plan?", a:"Each time you click Generate Response, that counts as one. You get 3 per month on the free plan, unlimited on Pro." },
             ].map(f => (
