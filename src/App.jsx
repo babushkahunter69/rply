@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import Landing from "./Landing";
 import Leads from "./Leads";
 import Mentions from "./Mentions";
+import BrandVoice from "./BrandVoice";
 import {
   signUp, signIn, signInWithGoogle, signOutUser,
   onAuthChange, getUserData, incrementUsage, saveBizName,
-  saveResponse, getHistory,
+  saveResponse, getHistory, saveBrandVoice,
 } from "./firebase";
 
 const FREE_LIMIT = 3;
@@ -370,8 +371,19 @@ function Dashboard({ user, onUsage, goTo }) {
     if (locked)         { setErr("You've used all 3 free responses. Upgrade to continue."); return; }
     setErr(""); setLoading(true); setResult("");
 
-    const prompt = `You are a professional reputation manager for local businesses.
+    const bv = user.brandVoice || {};
+    const brandLines = [
+      bv.bizType    && `Business type: ${bv.bizType}`,
+      bv.location   && `Location: ${bv.location}`,
+      bv.ownerName  && `Owner name: ${bv.ownerName}`,
+      bv.tones?.length && `Brand tone: ${bv.tones.join(", ")}`,
+      bv.complaints && `Common complaints: ${bv.complaints}`,
+      bv.extras     && `About the business: ${bv.extras}`,
+      bv.signOff    && `Preferred sign-off: ${bv.signOff}`,
+    ].filter(Boolean).join("\n");
 
+    const prompt = `You are a professional reputation manager for local businesses.
+${brandLines ? `\nBrand voice profile:\n${brandLines}\n` : ""}
 A customer left this ${stars}-star review${biz ? ` for "${biz}"` : ""}:
 
 "${review}"
@@ -380,9 +392,11 @@ Write a ${tone} response from the business owner. Rules:
 — Under 100 words
 — Acknowledge specific feedback mentioned
 — Sound like a real human business owner, not a template
+— Match the brand tone and voice if provided above
 — ${stars <= 2 ? "Apologize sincerely and offer to make it right" : "Thank them warmly and invite them back"}
 — Do NOT open with "Thank you for your review"
-— End with a natural sign-off like "Warm regards, The Team" — never use placeholder text like [Business Owner Name]
+— Use the preferred sign-off if provided, otherwise end naturally
+— Never use placeholder text like [Business Owner Name]
 
 Return ONLY the response. No preamble, no labels.`;
 
@@ -414,7 +428,12 @@ Return ONLY the response. No preamble, no labels.`;
     <div className="page-wide">
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:36,flexWrap:"wrap",gap:16}}>
         <div>
-          <div className="sh">Generate a response</div>
+          <div style={{display:"flex",alignItems:"center",gap:12,flexWrap:"wrap"}}>
+            <div className="sh">Generate a response</div>
+            <button className="btn btn-default" style={{fontSize:12,padding:"6px 14px",borderRadius:20}} onClick={()=>goTo("brandvoice")}>
+              {user.brandVoice?.bizName ? "Edit brand voice" : "Set brand voice"}
+            </button>
+          </div>
           <p className="ss">Paste any review, set the tone, get a reply in seconds.</p>
         </div>
         <div className="card" style={{padding:"16px 20px",minWidth:210,flexShrink:0}}>
@@ -513,6 +532,7 @@ export default function App() {
   const [view,    setView]    = useState(() => {
     if (window.location.pathname === "/leads") return "leads";
     if (window.location.pathname === "/mentions") return "mentions";
+    if (window.location.pathname === "/brandvoice") return "brandvoice";
     return "home";
   });
   const [user,    setUser]    = useState(null);
@@ -567,6 +587,10 @@ export default function App() {
     setView("dashboard");
   };
 
+  const handleBrandVoiceSave = (brandVoice) => {
+    setUser(u => ({...u, brandVoice}));
+  };
+
   const handleUsage = async (biz) => {
     if (!user) return;
     if (user.isPro) {
@@ -607,6 +631,7 @@ export default function App() {
       {view==="dashboard" && !user && <AuthPage onAuth={()=>setView("dashboard")} />}
       {view==="leads" && <Leads />}
       {view==="mentions" && <Mentions />}
+      {view==="brandvoice" && user && <BrandVoice user={user} onSave={handleBrandVoiceSave} goTo={setView} />}
 
       {stripe && <StripeModal plan={stripe} onDone={handlePayment} onClose={()=>setStripe(null)} />}
     </div>

@@ -110,3 +110,8 @@ export async function getHistory(uid, max = 30) {
   const snap = await getDocs(q);
   return snap.docs.map(d => ({ id: d.id, ...d.data() }));
 }
+
+// ── brand voice ───────────────────────────────────────────────────────────────
+export async function saveBrandVoice(uid, brandVoice) {
+  await updateDoc(doc(db, "users", uid), { brandVoice });
+}
