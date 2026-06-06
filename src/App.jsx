@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Landing from "./Landing";
 import Leads from "./Leads";
 import Mentions from "./Mentions";
+import ReviewQueue from "./ReviewQueue";
+import Templates from "./Templates";
 import BrandVoice from "./BrandVoice";
 import {
   signUp, signIn, signInWithGoogle, signOutUser,
@@ -428,10 +430,16 @@ Return ONLY the response. No preamble, no labels.`;
     <div className="page-wide">
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:36,flexWrap:"wrap",gap:16}}>
         <div>
-          <div style={{display:"flex",alignItems:"center",gap:12,flexWrap:"wrap"}}>
+          <div style={{display:"flex",alignItems:"center",gap:10,flexWrap:"wrap"}}>
             <div className="sh">Generate a response</div>
             <button className="btn btn-default" style={{fontSize:12,padding:"6px 14px",borderRadius:20}} onClick={()=>goTo("brandvoice")}>
               {user.brandVoice?.bizName ? "Edit brand voice" : "Set brand voice"}
+            </button>
+            <button className="btn btn-default" style={{fontSize:12,padding:"6px 14px",borderRadius:20}} onClick={()=>goTo("queue")}>
+              Review queue
+            </button>
+            <button className="btn btn-default" style={{fontSize:12,padding:"6px 14px",borderRadius:20}} onClick={()=>goTo("templates")}>
+              Templates
             </button>
           </div>
           <p className="ss">Paste any review, set the tone, get a reply in seconds.</p>
@@ -532,6 +540,8 @@ export default function App() {
   const [view,    setView]    = useState(() => {
     if (window.location.pathname === "/leads") return "leads";
     if (window.location.pathname === "/mentions") return "mentions";
+    if (window.location.pathname === "/queue") return "queue";
+    if (window.location.pathname === "/templates") return "templates";
     if (window.location.pathname === "/brandvoice") return "brandvoice";
     return "home";
   });
@@ -630,6 +640,8 @@ export default function App() {
       {view==="dashboard" && user && <Dashboard user={user} onUsage={handleUsage} goTo={setView} />}
       {view==="dashboard" && !user && <AuthPage onAuth={()=>setView("dashboard")} />}
       {view==="leads" && <Leads />}
+      {view==="queue" && user && <ReviewQueue user={user} goTo={setView} />}
+      {view==="templates" && user && <Templates user={user} goTo={setView} />}
       {view==="mentions" && <Mentions />}
       {view==="brandvoice" && user && <BrandVoice user={user} onSave={handleBrandVoiceSave} goTo={setView} />}
 
