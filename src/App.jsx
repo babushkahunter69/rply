@@ -559,6 +559,16 @@ export default function App() {
   const [banner,  setBanner]  = useState(false);
 
   useEffect(() => {
+    const handlePop = () => {
+      const path = window.location.pathname;
+      const map = { "/": "home", "/auth": "auth", "/pricing": "pricing", "/dashboard": "dashboard", "/brandvoice": "brandvoice", "/queue": "queue", "/templates": "templates", "/leads": "leads", "/mentions": "mentions", "/privacy": "privacy" };
+      setView(map[path] || "home");
+    };
+    window.addEventListener("popstate", handlePop);
+    return () => window.removeEventListener("popstate", handlePop);
+  }, []);
+
+  useEffect(() => {
     const unsub = onAuthChange(async (firebaseUser) => {
       if (firebaseUser) {
         const data = await getUserData(firebaseUser.uid);
