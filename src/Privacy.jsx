@@ -1,5 +1,4 @@
 const S = `
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 .pv{font-family:'DM Sans',sans-serif;color:#0f0e0c;-webkit-font-smoothing:antialiased;max-width:680px;margin:0 auto;padding:60px 24px 100px}
 .pv h1{font-family:'DM Serif Display',serif;font-size:36px;font-weight:400;margin-bottom:8px}

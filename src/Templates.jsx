@@ -3,7 +3,6 @@ import { db } from "./firebase";
 import { collection, addDoc, getDocs, deleteDoc, doc, query, orderBy } from "firebase/firestore";
 
 const S = `
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 .tp{font-family:'DM Sans',sans-serif;color:#0f0e0c;-webkit-font-smoothing:antialiased;max-width:760px;margin:0 auto;padding:48px 24px 80px}
 .tp-title{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:6px}

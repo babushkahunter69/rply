@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const S = `
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:#faf9f6}
 .mn{min-height:100vh;background:#faf9f6;font-family:'DM Sans',sans-serif;color:#0f0e0c;-webkit-font-smoothing:antialiased;padding:40px 24px 80px}

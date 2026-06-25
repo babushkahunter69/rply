@@ -2,7 +2,6 @@ import { useState } from "react";
 import { saveBrandVoice } from "./firebase";
 
 const S = `
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 .bv{font-family:'DM Sans',sans-serif;color:#0f0e0c;-webkit-font-smoothing:antialiased;max-width:640px;margin:0 auto;padding:48px 24px 80px}
 .bv-title{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:6px}

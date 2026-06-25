@@ -23,7 +23,6 @@ const TONES = [
 const STAR_LABELS = ["", "Terrible", "Poor", "Average", "Good", "Excellent"];
 
 const S = `
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Geist:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#0f0e0c;--ink2:#4a4740;--ink3:#9a9590;
@@ -32,13 +31,13 @@ const S = `
   --red:#991b1b;--red-bg:#fef2f2;
 }
 body{background:var(--surface)}
-.root{min-height:100vh;background:var(--surface);font-family:'Geist',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.root{min-height:100vh;background:var(--surface);font-family:'DM Sans',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 .nav{display:flex;justify-content:space-between;align-items:center;height:60px;padding:0 32px;background:var(--white);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:50}
-.wordmark{font-family:'Fraunces',serif;font-size:20px;font-weight:400;letter-spacing:-0.3px;color:var(--ink);cursor:pointer}
+.wordmark{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;letter-spacing:-0.3px;color:var(--ink);cursor:pointer}
 .wordmark em{font-style:italic;font-weight:300;color:var(--ink3)}
 .wordmark span{font-style:normal;font-weight:500;color:var(--ink)}
 .nav-actions{display:flex;align-items:center;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:6px;font-family:'Geist',sans-serif;font-size:13px;font-weight:500;border-radius:6px;padding:8px 16px;cursor:pointer;transition:background .15s,color .15s,border-color .15s;border:1px solid transparent;line-height:1;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;border-radius:6px;padding:8px 16px;cursor:pointer;transition:background .15s,color .15s,border-color .15s;border:1px solid transparent;line-height:1;letter-spacing:-.01em}
 .btn:disabled{opacity:.45;cursor:not-allowed}
 .btn-default{background:var(--white);color:var(--ink2);border-color:var(--rule)}
 .btn-default:hover:not(:disabled){background:var(--rule2);color:var(--ink)}
@@ -48,14 +47,14 @@ body{background:var(--surface)}
 .page{max-width:480px;margin:0 auto;padding:56px 20px 80px}
 .page-wide{max-width:860px;margin:0 auto;padding:48px 24px 80px}
 .label{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
-.input,.textarea{width:100%;font-family:'Geist',sans-serif;font-size:14px;font-weight:400;color:var(--ink);background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:10px 14px;outline:none;transition:border-color .15s;-webkit-appearance:none}
+.input,.textarea{width:100%;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;color:var(--ink);background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:10px 14px;outline:none;transition:border-color .15s;-webkit-appearance:none}
 .input:focus,.textarea:focus{border-color:#b0aba3}
 .input::placeholder,.textarea::placeholder{color:var(--ink3)}
 .textarea{resize:none;line-height:1.6}
 .field{margin-bottom:18px}
 .card{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:22px 24px}
 .auth-toggle{display:flex;background:var(--rule2);border-radius:8px;padding:3px;margin-bottom:24px;gap:3px}
-.auth-btn{flex:1;background:none;border:none;font-family:'Geist',sans-serif;font-size:13px;font-weight:500;color:var(--ink3);padding:8px;border-radius:6px;cursor:pointer;transition:all .15s;letter-spacing:-.01em}
+.auth-btn{flex:1;background:none;border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--ink3);padding:8px;border-radius:6px;cursor:pointer;transition:all .15s;letter-spacing:-.01em}
 .auth-btn.on{background:var(--white);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
 @media(max-width:680px){.plan-grid{grid-template-columns:1fr}}
@@ -63,7 +62,7 @@ body{background:var(--surface)}
 .plan-card.highlighted{border-color:var(--ink);border-width:1.5px}
 .plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--white);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 12px;border-radius:20px;white-space:nowrap}
 .plan-tier{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
-.plan-price{font-family:'Fraunces',serif;font-size:44px;font-weight:400;line-height:1;color:var(--ink);margin:12px 0 4px}
+.plan-price{font-family:'DM Serif Display',serif;font-size:44px;font-weight:400;line-height:1;color:var(--ink);margin:12px 0 4px}
 .plan-cadence{font-size:13px;color:var(--ink3);margin-bottom:22px}
 .feat-list{list-style:none;flex:1;margin-bottom:24px}
 .feat-list li{font-size:13px;color:var(--ink2);padding:6px 0;border-bottom:1px solid var(--rule2);display:flex;align-items:center;gap:10px;line-height:1.4}
@@ -72,7 +71,7 @@ body{background:var(--surface)}
 .feat-no{color:#ccc;font-size:15px;flex-shrink:0}
 .tone-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 @media(max-width:420px){.tone-grid{grid-template-columns:1fr}}
-.tone-option{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;cursor:pointer;text-align:left;font-family:'Geist',sans-serif;transition:border-color .15s,background .15s}
+.tone-option{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;transition:border-color .15s,background .15s}
 .tone-option:hover{border-color:#c8c3bb}
 .tone-option.on{border-color:var(--ink);background:var(--rule2)}
 .tone-name{font-size:13px;font-weight:500;color:var(--ink);display:block}
@@ -99,7 +98,7 @@ body{background:var(--surface)}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .modal{background:var(--white);border-radius:16px;border:1px solid var(--rule);padding:36px;max-width:420px;width:100%;animation:slideUp .22s ease}
 @keyframes slideUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-title{font-family:'Fraunces',serif;font-size:22px;font-weight:400;margin-bottom:4px}
+.modal-title{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;margin-bottom:4px}
 .modal-sub{font-size:13px;color:var(--ink3);margin-bottom:24px}
 .spin{display:inline-block;width:14px;height:14px;border:1.5px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:rot .65s linear infinite;vertical-align:middle}
 .spin-dark{border-color:rgba(0,0,0,.12);border-top-color:var(--ink)}
@@ -110,7 +109,7 @@ body{background:var(--surface)}
 .hist-item:last-child{border-bottom:none}
 .hist-meta{font-size:11px;color:var(--ink3);margin-bottom:3px}
 .hist-snip{font-size:12px;color:var(--ink2);line-height:1.4}
-.sh{font-family:'Fraunces',serif;font-weight:400;font-size:24px;letter-spacing:-.01em;margin-bottom:6px}
+.sh{font-family:'DM Serif Display',serif;font-weight:400;font-size:24px;letter-spacing:-.01em;margin-bottom:6px}
 .ss{font-size:15px;color:var(--ink3);font-weight:300}
 .stripe-note{margin-top:32px;padding:16px 20px;background:var(--rule2);border:1px solid var(--rule);border-radius:10px;font-size:12px;color:var(--ink3);line-height:1.7;text-align:center}
 code{font-family:monospace;background:var(--rule);padding:1px 5px;border-radius:4px;font-size:11px;color:var(--ink2)}
@@ -454,7 +453,7 @@ Return ONLY the response. No preamble, no labels.`;
             <div style={{fontSize:13,color:"var(--green)",marginTop:8,fontWeight:500}}>Unlimited responses</div>
           ) : (
             <>
-              <div style={{fontSize:22,fontFamily:"'Fraunces',serif",fontWeight:400,marginTop:4}}>
+              <div style={{fontSize:22,fontFamily:"'DM Serif Display',serif",fontWeight:400,marginTop:4}}>
                 {user.usageCount} <span style={{fontSize:13,color:"var(--ink3)",fontWeight:400}}>of {FREE_LIMIT} used</span>
               </div>
               <div className="track"><div className="track-fill" style={{width:`${pct}%`}} /></div>
