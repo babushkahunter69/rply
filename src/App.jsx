@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import Landing from "./Landing";
-import Leads from "./Leads";
-import Mentions from "./Mentions";
-import ReviewQueue from "./ReviewQueue";
-import Templates from "./Templates";
-import Privacy from "./Privacy";
-import BrandVoice from "./BrandVoice";
+const Leads = lazy(() => import("./Leads"));
+const Mentions = lazy(() => import("./Mentions"));
+const ReviewQueue = lazy(() => import("./ReviewQueue"));
+const Templates = lazy(() => import("./Templates"));
+const Privacy = lazy(() => import("./Privacy"));
+const BrandVoice = lazy(() => import("./BrandVoice"));
 import {
   signUp, signIn, signInWithGoogle, signOutUser,
   onAuthChange, getUserData, incrementUsage, saveBizName,
@@ -651,17 +651,22 @@ export default function App() {
         </div>
       )}
 
-      {view==="home"      && <Landing goTo={navigate} />}
-      {view==="auth"      && <AuthPage onAuth={()=>setView("dashboard")} />}
-      {view==="pricing"   && <PricingPage user={user} onSelect={handleSelectPlan} />}
-      {view==="dashboard" && user && <Dashboard user={user} onUsage={handleUsage} goTo={navigate} />}
-      {view==="dashboard" && !user && <AuthPage onAuth={()=>setView("dashboard")} />}
-      {view==="leads" && <Leads />}
-      {view==="queue" && user && <ReviewQueue user={user} goTo={navigate} />}
-      {view==="templates" && user && <Templates user={user} goTo={navigate} />}
-      {view==="privacy" && <Privacy goTo={navigate} />}
-      {view==="mentions" && <Mentions />}
-      {view==="brandvoice" && user && <BrandVoice user={user} onSave={handleBrandVoiceSave} goTo={navigate} />}
+      <main>
+        {view==="home"      && <Landing goTo={navigate} />}
+        {view==="auth"      && <AuthPage onAuth={()=>setView("dashboard")} />}
+        {view==="pricing"   && <PricingPage user={user} onSelect={handleSelectPlan} />}
+        {view==="dashboard" && user && <Dashboard user={user} onUsage={handleUsage} goTo={navigate} />}
+        {view==="dashboard" && !user && <AuthPage onAuth={()=>setView("dashboard")} />}
+
+        <Suspense fallback={<div style={{padding:"60px 24px",textAlign:"center",color:"#9a9590",fontFamily:"'DM Sans',sans-serif"}}>Loading...</div>}>
+          {view==="leads" && <Leads />}
+          {view==="queue" && user && <ReviewQueue user={user} goTo={navigate} />}
+          {view==="templates" && user && <Templates user={user} goTo={navigate} />}
+          {view==="privacy" && <Privacy goTo={navigate} />}
+          {view==="mentions" && <Mentions />}
+          {view==="brandvoice" && user && <BrandVoice user={user} onSave={handleBrandVoiceSave} goTo={navigate} />}
+        </Suspense>
+      </main>
 
       {stripe && <StripeModal plan={stripe} onDone={handlePayment} onClose={()=>setStripe(null)} />}
     </div>

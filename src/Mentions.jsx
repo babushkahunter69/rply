@@ -7,7 +7,7 @@ body{background:#faf9f6}
 .mn-inner{max-width:900px;margin:0 auto}
 .mn-title{font-family:'DM Serif Display',serif;font-size:28px;font-weight:400;margin-bottom:4px}
 .mn-sub{font-size:14px;color:#9a9590;margin-bottom:8px}
-.mn-note{font-size:12px;color:#c8c3bb;margin-bottom:28px;background:#f2efe9;border:1px solid #e8e4de;border-radius:8px;padding:10px 14px;}
+.mn-note{font-size:12px;color:#7a756f;margin-bottom:28px;background:#f2efe9;border:1px solid #e8e4de;border-radius:8px;padding:10px 14px;}
 .search-row{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
 .mn-input{flex:1;min-width:180px;font-family:'DM Sans',sans-serif;font-size:14px;color:#0f0e0c;background:#fff;border:1px solid #e8e4de;border-radius:8px;padding:10px 14px;outline:none;transition:border-color .15s}
 .mn-input:focus{border-color:#b0aba3}

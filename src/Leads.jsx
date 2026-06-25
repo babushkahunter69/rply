@@ -34,7 +34,7 @@ body{background:#faf9f6}
 .review-item:last-child{margin-bottom:0}
 .review-stars{font-size:12px;color:#f59e0b;margin-bottom:4px}
 .review-text{font-size:13px;color:#4a4740;line-height:1.6;font-style:italic}
-.review-date{font-size:11px;color:#c8c3bb;margin-top:4px}
+.review-date{font-size:11px;color:#8b8580;margin-top:4px}
 .email-box{margin-top:16px;background:#f8f7f4;border:1px solid #e8e4de;border-radius:10px;padding:16px}
 .email-label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9a9590;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
 .email-text{font-size:13px;color:#0f0e0c;line-height:1.7;white-space:pre-wrap}

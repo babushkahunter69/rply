@@ -8,7 +8,7 @@ const S = `
 .bv-sub{font-size:14px;color:#9a9590;margin-bottom:36px;line-height:1.6}
 .bv-section{margin-bottom:28px}
 .bv-label{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6b6760;margin-bottom:8px}
-.bv-hint{font-size:12px;color:#c8c3bb;margin-bottom:8px}
+.bv-hint{font-size:12px;color:#8b8580;margin-bottom:8px}
 .bv-input,.bv-textarea{width:100%;font-family:'DM Sans',sans-serif;font-size:14px;color:#0f0e0c;background:#fff;border:1px solid #e8e4de;border-radius:8px;padding:10px 14px;outline:none;transition:border-color .15s}
 .bv-input:focus,.bv-textarea:focus{border-color:#b0aba3}
 .bv-input::placeholder,.bv-textarea::placeholder{color:#c8c3bb}
