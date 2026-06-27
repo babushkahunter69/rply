@@ -680,6 +680,10 @@ export default function Landing({ goTo }) {
         <footer className="footer">
           <div className="footer-logo"><em>r</em><span>ply</span></div>
           <div className="footer-copy">© 2026 Rply. Built for local businesses. <span style={{margin:"0 8px",color:"var(--rule)"}}>·</span> <span style={{cursor:"pointer",textDecoration:"underline"}} onClick={()=>goTo("privacy")}>Privacy Policy</span></div>
+          {/* ToolJunction badge - keep rel="dofollow" */}
+          <a href="https://www.tooljunction.io/ai-tools/rply-ai-review-responder?utm_source=badge&utm_medium=referral" target="_blank" rel="dofollow">
+            <img src="https://www.tooljunction.io/badges/featured-on-tooljunction.svg" alt="Featured on ToolJunction" width="220" height="60" />
+          </a>
         </footer>
 
       </div>
